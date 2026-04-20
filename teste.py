@@ -16,6 +16,22 @@ class Cadastro_Escola:
         self.cep_escola = input("School cep: ")
 
         self.escola = [self.nome_escola, self.endereco_escola, self.cep_escola]
+        self.escolas += [self.escola]
+    
+    def exibir_escola(self):
 
-arquivo_escola = Cadastro_Escola
-arquivo_escola.cadastrar_escola()
+        if self.nome_escola and self.endereco_escola and self.cep_escola == None:
+            print("Error!\nNenhuma escola cadastrada.\nVolte ao menu e realize o cadastro de uma escola.")
+
+        print("======== Escolas Cadastradas no Sistema ========\n")
+        print("Name school: ", self.nome_escola)
+        print("Adress school: ", self.endereco_escola)
+        print("cep school: ", self.cep_escola)
+
+        return self.listar_opcoes()    
+
+teste = Cadastro_Escola()
+# arquivo_escola.cadastrar_escola()
+teste.cadastrar_escola()
+escola = [teste.cadastrar_escola()]
+teste.exibir_escola()
